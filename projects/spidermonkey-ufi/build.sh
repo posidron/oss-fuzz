@@ -43,7 +43,7 @@ cd build_OPT.OBJ
     --disable-jemalloc \
     --enable-tests \
     --enable-fuzzing \
-    --enable-address-sanitizer
+    --enable-$SANITIZER-sanitizer
 
 make "-j$(nproc)"
 
@@ -56,4 +56,3 @@ do
     -DFUZZ_TARGET=$FUZZ_TARGET \
     $SRC/target.c -o $OUT/$FUZZ_TARGET
 done
-
